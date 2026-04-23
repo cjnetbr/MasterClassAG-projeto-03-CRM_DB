@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launder & Clean | Higienização Premium</title>
+    <meta name="description" content="Serviços premium de higienização de estofados, colchões e tapetes. Profissionalismo e luxo para sua casa.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="assets/images/logo.png" alt="Launder & Clean Logo" class="logo-img">
+                <span>Launder & Clean</span>
+            </a>
+            <div class="nav-links">
+                <a href="#servicos">Serviços</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <button class="btn-primary" onclick="openModal()">Solicitar Orçamento</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <div class="mobile-menu">
+            <a href="#servicos" onclick="toggleMenu()">Serviços</a>
+            <a href="#depoimentos" onclick="toggleMenu()">Depoimentos</a>
+            <button class="btn-primary" onclick="toggleMenu(); openModal()">Solicitar Orçamento</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg">
+            <img src="assets/images/hero.png" alt="Sala de estar luxuosa com sofá limpo">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content reveal">
+            <span class="eyebrow">Padrão Ouro em Cuidados</span>
+            <h1>Excelência em Higienização Premium</h1>
+            <p>Devolva a elegância e o conforto ao seu lar com nossos serviços especializados em estofados, tapetes e colchões. Tratamento artesanal com tecnologia de ponta.</p>
+            <div class="hero-actions">
+                <button class="btn-primary btn-large" onclick="openModal()">Agendar Avaliação</button>
+                <a href="#servicos" class="btn-secondary btn-large">Conhecer Serviços</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="services">
+        <div class="section-header reveal">
+            <h2>Nossa Expertise</h2>
+            <p>Tratamentos especializados projetados para prolongar a vida útil das suas peças mais valiosas e garantir um ambiente saudável.</p>
+        </div>
+        
+        <div class="services-grid">
+            <!-- Card 1 -->
+            <div class="service-card reveal" style="--delay: 0.1s">
+                <div class="service-img-wrapper">
+                    <img src="assets/images/service-upholstery.png" alt="Higienização de Estofados">
+                </div>
+                <div class="service-info glass-panel">
+                    <i data-lucide="sofa" class="service-icon"></i>
+                    <h3>Higienização de Estofados</h3>
+                    <p>Limpeza profunda que remove ácaros, manchas e odores, restaurando a cor original e a textura do seu sofá com produtos exclusivos.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="service-card reveal" style="--delay: 0.2s">
+                <div class="service-img-wrapper">
+                    <img src="assets/images/service-waterproofing.png" alt="Impermeabilização">
+                </div>
+                <div class="service-info glass-panel">
+                    <i data-lucide="shield-check" class="service-icon"></i>
+                    <h3>Impermeabilização</h3>
+                    <p>Proteção invisível e duradoura contra líquidos e sujeiras acidentais, garantindo que seu estofado permaneça impecável por muito mais tempo.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="service-card reveal" style="--delay: 0.3s">
+                <div class="service-img-wrapper">
+                    <img src="assets/images/service-mattress.png" alt="Higienização de Colchões">
+                </div>
+                <div class="service-info glass-panel">
+                    <i data-lucide="bed" class="service-icon"></i>
+                    <h3>Higienização de Colchões</h3>
+                    <p>Sanitização completa com tecnologia UV e extração profunda para eliminar ácaros e bactérias, proporcionando noites de sono seguras e saudáveis.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="service-card reveal" style="--delay: 0.4s">
+                <div class="service-img-wrapper">
+                    <img src="assets/images/service-carpet.png" alt="Higienização de Tapetes">
+                </div>
+                <div class="service-info glass-panel">
+                    <i data-lucide="layers" class="service-icon"></i>
+                    <h3>Higienização de Tapetes</h3>
+                    <p>Cuidados artesanais para tapetes finos e orientais. Revitalização das fibras e cores sem comprometer a estrutura da peça.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="testimonials">
+        <div class="section-header reveal">
+            <h2>O que nossos clientes dizem</h2>
+            <p>O nível de satisfação de quem já vivenciou o padrão Launder & Clean em suas casas.</p>
+        </div>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card reveal" style="--delay: 0.1s">
+                <div class="stars">
+                    <i data-lucide="star" class="star filled"></i>
+                    <i data-lucide="star" class="star filled"></i>
+                    <i data-lucide="star" class="star filled"></i>
+                    <i data-lucide="star" class="star filled"></i>
+                    <i data-lucide="star" class="star filled"></i>
+                </div>
+                <p class="quote">"Serviço absolutamente impecável. Meu sofá claro de linho que eu já achava estar perdido voltou a parecer como no dia em que saiu da loja."</p>
+                <div class="author">
+                    <div class="author-avatar">MS</div>
+                    <div class="author-details">
+                        <strong>Marina Silva</strong>
+                        <span>Arquiteta</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal" style="--delay: 0.2s">
+                <div class="stars">
+                    <i data-lucide="star" class="star filled"></i>
+                    <i data-lucide="star" class="star filled"></i>
+                    <i data-lucide="star" class="star filled"></i>
+                    <i data-lucide="star" class="star filled"></i>
+                    <i data-lucide="star" class="star filled"></i>
+                </div>
+                <p class="quote">"O cuidado com que trataram meu tapete persa foi excepcional. A equipe é pontual, educada e os produtos não deixam cheiro forte na casa."</p>
+                <div class="author">
+                    <div class="author-avatar">RO</div>
+                    <div class="author-details">
+                        <strong>Ricardo Oliveira</strong>
+                        <span>Empresário</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card reveal" style="--delay: 0.3s">
+                <div class="stars">
+                    <i data-lucide="star" class="star filled"></i>
+                    <i data-lucide="star" class="star filled"></i>
+                    <i data-lucide="star" class="star filled"></i>
+                    <i data-lucide="star" class="star filled"></i>
+                    <i data-lucide="star" class="star filled"></i>
+                </div>
+                <p class="quote">"Fiz a higienização dos colchões pela primeira vez. A quantidade de poeira que saiu me assustou. Excelente trabalho e muita transparência."</p>
+                <div class="author">
+                    <div class="author-avatar">AP</div>
+                    <div class="author-details">
+                        <strong>Ana Paula</strong>
+                        <span>Médica</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Footer -->
+    <section class="cta-banner">
+        <div class="cta-content reveal">
+            <h2>Pronto para elevar o nível de limpeza da sua casa?</h2>
+            <p>Agende uma avaliação e descubra o padrão Launder & Clean de cuidado.</p>
+            <button class="btn-primary btn-large" onclick="openModal()">Solicitar Orçamento Agora</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Launder & Clean Logo" class="logo-img">
+                    <span>Launder & Clean</span>
+                </div>
+                <p>A referência em higienização e estética para estofados e tapetes de luxo.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Contato</h4>
+                <p><i data-lucide="phone"></i> (11) 99999-9999</p>
+                <p><i data-lucide="mail"></i> contato@launderandclean.com</p>
+                <p><i data-lucide="map-pin"></i> São Paulo, SP</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Launder & Clean. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Multi-step Modal -->
+    <div id="quoteModal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="close-modal" onclick="closeModal()">
+                <i data-lucide="x"></i>
+            </button>
+            
+            <div class="modal-header">
+                <h3>Solicitar Orçamento</h3>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="step-indicators">
+                    <span class="step-indicator active">1. Detalhes</span>
+                    <span class="step-indicator">2. Contato</span>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <!-- Step 1 -->
+                <form id="step1Form" class="step-form active">
+                    <div class="form-group">
+                        <label>Foto do Item (Estofado/Tapete/Colchão)</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="itemPhoto" accept="image/*" class="file-input">
+                            <div class="file-upload-ui">
+                                <i data-lucide="upload-cloud"></i>
+                                <span>Clique para anexar ou arraste a imagem</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="length">Comprimento (cm)</label>
+                            <input type="number" id="length" placeholder="Ex: 200" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="width">Largura (cm)</label>
+                            <input type="number" id="width" placeholder="Ex: 150" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="zipcode">CEP da Residência</label>
+                        <input type="text" id="zipcode" placeholder="00000-000" maxlength="9" onkeyup="maskCEP(event)" required>
+                    </div>
+
+                    <div class="form-actions right">
+                        <button type="button" class="btn-primary" onclick="nextStep()">Continuar <i data-lucide="arrow-right"></i></button>
+                    </div>
+                </form>
+
+                <!-- Step 2 -->
+                <form id="step2Form" class="step-form">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefone / WhatsApp</label>
+                        <input type="tel" id="phone" placeholder="(00) 00000-0000" onkeyup="maskPhone(event)" required>
+                    </div>
+
+                    <div class="form-actions space-between">
+                        <button type="button" class="btn-secondary" onclick="prevStep()"><i data-lucide="arrow-left"></i> Voltar</button>
+                        <button type="button" class="btn-primary" onclick="submitForm()">Enviar Solicitação</button>
+                    </div>
+                </form>
+
+                <!-- Success Step -->
+                <div id="successStep" class="step-form success-message">
+                    <div class="success-icon">
+                        <i data-lucide="check-circle"></i>
+                    </div>
+                    <h4>Solicitação Enviada!</h4>
+                    <p>Recebemos suas informações. Nossa equipe entrará em contato em breve com um orçamento detalhado.</p>
+                    <button class="btn-primary" onclick="closeModal()">Concluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
